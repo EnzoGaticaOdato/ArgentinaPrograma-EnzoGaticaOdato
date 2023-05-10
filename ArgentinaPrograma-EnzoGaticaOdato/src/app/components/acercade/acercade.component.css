@@ -9,8 +9,6 @@ div{
 
 @media (min-width: 576px){
     #fotodeperfil{
-        position: absolute;
-        width: 15%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
         left: 3%;    
@@ -20,12 +18,11 @@ div{
 
 @media (max-width: 575px){
     #fotodeperfil{
-        position: absolute;
-        width: 30%;
+        width: 50%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
         left: 33%;    
-        top: 630px;
+        top: 950px;
     }
 }
 

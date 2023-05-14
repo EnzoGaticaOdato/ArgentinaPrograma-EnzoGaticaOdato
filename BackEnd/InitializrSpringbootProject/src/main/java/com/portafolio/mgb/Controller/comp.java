@@ -1,4 +1,4 @@
-package com.portafolio.mgb.Controller;
+/**package com.portafolio.mgb.Controller;
 
 import com.portafolio.mgb.Entity.Persona;
 import com.portafolio.mgb.Interface.IPersonaService;
@@ -55,4 +55,4 @@ public class PersonaController {
     public Persona findPersona(){
         return ipersonaService.findPersona((long)1);
     }
-}
+}**/

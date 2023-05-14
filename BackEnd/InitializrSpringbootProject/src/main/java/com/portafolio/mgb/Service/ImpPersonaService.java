@@ -1,36 +1,40 @@
-package com.portafolio.mgb.Service;
+package com.portafolio.mgb.service;
 
 import com.portafolio.mgb.Entity.Persona;
-import com.portafolio.mgb.Interface.IPersonaService;
 import com.portafolio.mgb.Repository.IPersonaRepository;
 import java.util.List;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ImpPersonaService implements IPersonaService {
-    @Autowired IPersonaRepository ipersonaRepository;
-
-    @Override
-    public List<Persona> getPersona() {
-        List<Persona> persona = ipersonaRepository.findAll();
-        return persona;
-    }
-
-    @Override
-    public void savePersona(Persona persona) {
-        ipersonaRepository.save(persona);
-    }
-
-    @Override
-    public void deletePersona(Long id) {
-        ipersonaRepository.deleteById(id);
-    }
-
-    @Override
-    public Persona findPersona(Long id) {
-        Persona persona = ipersonaRepository.findById(id).orElse(null);
-        return persona;
+@Transactional
+public class ImpPersonaService  {
+    @Autowired IPersonaRepository rPersona;
+    
+    
+    
+   public List<Persona> list(){
+        return rPersona.findAll();
     }
     
+    public Persona getOne(Long id){
+        Persona perso = rPersona.findById(id).orElse(null);
+        return perso;
+    }    
+   
+    
+    public void save(Persona pers){
+        rPersona.save(pers);
+    }      
+    
+   
+     public void delete(Long id){
+        rPersona.deleteById(id);
+    }    
+     
+     public void edit(Persona pers){
+        rPersona.save(pers);
+    }  
+       
 }

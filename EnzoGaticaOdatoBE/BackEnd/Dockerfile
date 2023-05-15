@@ -1,7 +1,7 @@
 FROM amazoncorretto:11-alpine-jdk
 
-MAINTAINER lucaslatessa
+MAINTAINER mgb
 
-COPY target/lucas-0.0.1-SNAPSHOT.jar lucas.jar
+COPY target/mgb-0.0.1-SNAPSHOT.jar mgb-app.jar
 
-ENTRYPOINT ["java","-jar","/lucas.jar"]
+ENTRYPOINT ["java","-jar","/mgb-app.jar"]
